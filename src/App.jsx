@@ -82,8 +82,10 @@ const App = () => {
     ]
   )
 
-  const handleAddFighter = () => {}
-  
+  const handleAddFighter = () => {
+    console.log(handleAddFighter)
+  }
+
   return (
     <>
     <h1>Zombie Fighters</h1>
@@ -93,7 +95,7 @@ const App = () => {
                   <ul>
                    
                    <li><h3>Name: {fighter.name}</h3></li>
-                  <button>Add</button>
+                  <button onClick={handleAddFighter}>Add</button>
                   <li><h3>Name: {fighter.price}</h3></li>
                   <button>Add</button>
                   <li><h3>Name: {fighter.strength}</h3></li>
