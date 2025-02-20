@@ -82,30 +82,41 @@ const App = () => {
     ]
   )
 
-  const handleAddFighter = () => {
-    console.log(handleAddFighter)
+  // const [formData, setFormData] = () => {
+
+  // }
+  const handleAddFighter = (newfighter) => {
+    const newFighterArr = [...team, newfighter]
+    setTeam(newFighterArr)
   }
+
 
   return (
     <>
     <h1>Zombie Fighters</h1>
+    <h3>Money:</h3>
+    <h3>Team Strength:</h3>
+    <h3>Team Agility</h3>
+    <h3>Team</h3>
+    {team.map((team) => {
+      {team.name}
+    })}
+    
     {fighters.map((fighter) => (
                 <>
-                <form>
                   <ul>
-                   
-                   <li><h3>Name: {fighter.name}</h3></li>
-                  <button onClick={handleAddFighter}>Add</button>
-                  <li><h3>Name: {fighter.price}</h3></li>
+                   <li>
+                    <h3>Name: {fighter.name}</h3>
+                    <button onClick={() => handleAddFighter({name: `${fighter.name}`})}>Add</button>
+                <h3>Price: {fighter.price}</h3>
                   <button>Add</button>
-                  <li><h3>Name: {fighter.strength}</h3></li>
+                  <h3>Strength: {fighter.strength}</h3>
                   <button>Add</button>
-                   <li><h3>Name: {fighter.agility}</h3></li>
+                   <h3>Agility: {fighter.agility}</h3>
                   <button>Add</button>
-                  <li><h3>Name: {fighter.img}</h3></li>
-                  <button>Add</button>
+                </li>
                   </ul>
-                  </form>
+
                 </>
               ))        
             }
