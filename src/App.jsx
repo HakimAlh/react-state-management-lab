@@ -97,7 +97,10 @@ const App = () => {
     <h3>Money:</h3>
     <h3>Team Strength:</h3>
     <h3>Team Agility</h3>
-    <h3>Team</h3>
+    <h3>Team:</h3>
+    if (newTeamArr.length === 0) {
+      'Where is your team???'
+    } else 
       {teams.map((team) => (
                 <>
                   <h3>{team.name}</h3>
