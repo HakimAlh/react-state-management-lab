@@ -3,7 +3,7 @@ import './App.css'
 
 const App = () => {
   
-  const [team, setTeam] = useState([])
+  const [teams, setTeams] = useState([])
 
   const [money, setMoney] = useState([])
 
@@ -86,8 +86,8 @@ const App = () => {
 
   // }
   const handleAddFighter = (newfighter) => {
-    const newFighterArr = [...team, newfighter]
-    setTeam(newFighterArr)
+    const newFighterArr = [...teams, newfighter]
+    setTeams(newFighterArr)
   }
 
 
@@ -98,16 +98,22 @@ const App = () => {
     <h3>Team Strength:</h3>
     <h3>Team Agility</h3>
     <h3>Team</h3>
-    {team.map((team) => {
-      {team.name}
-    })}
+      {teams.map((team) => (
+                <>
+                  <h3>{team.name}</h3>
+              
+                </>
+              ))   }
+    <hr />
     
     {fighters.map((fighter) => (
                 <>
                   <ul>
                    <li>
+                   <hr />
                     <h3>Name: {fighter.name}</h3>
                     <button onClick={() => handleAddFighter({name: `${fighter.name}`})}>Add</button>
+                    <hr />
                 <h3>Price: {fighter.price}</h3>
                   <button>Add</button>
                   <h3>Strength: {fighter.strength}</h3>
