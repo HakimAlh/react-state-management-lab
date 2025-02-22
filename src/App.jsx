@@ -88,6 +88,15 @@ const App = () => {
   const handleAddFighter = (newfighter) => {
     const newFighterArr = [...teams, newfighter]
     setTeams(newFighterArr)
+    {teams.length === 0 ? 'No teams to display (Add a fighter)' : 
+      teams.map((team) => (
+        <>
+          <h3>{team.name}</h3>
+         
+        </>
+      ))        
+}
+
   }
 
   const handleMoney = (moneys) => {
