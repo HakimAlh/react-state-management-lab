@@ -5,7 +5,7 @@ const App = () => {
   
   const [teams, setTeams] = useState([])
 
-  const [money, setMoney] = useState([])
+  const [money, setMoney] = useState([100])
 
   const [fighters, setFighters] = useState(
     [
@@ -90,20 +90,24 @@ const App = () => {
     setTeams(newFighterArr)
   }
 
+  const handleMoney = (moneys) => {
+    const totalMoney = [...money, addMoney]
+    setMoney(totalMoney)
+    if (handleAddFighter)
+      return //Not sure what to put here for now
+  }
 
   return (
     <>
     <h1>Zombie Fighters</h1>
-    <h3>Money:</h3>
+    <h3>Money: {money} </h3>
     <h3>Team Strength:</h3>
     <h3>Team Agility</h3>
-    <h3>Team:</h3>
-    if (newTeamArr.length === 0) {
-      'Where is your team???'
-    } else 
+    <h3>Team</h3>
       {teams.map((team) => (
                 <>
                   <h3>{team.name}</h3>
+                  <h3>{team.price}</h3>
               
                 </>
               ))   }
