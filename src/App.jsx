@@ -5,7 +5,7 @@ const App = () => {
   
   const [teams, setTeams] = useState([])
 
-  const [money, setMoney] = useState([100])
+  const [money, setMoney] = useState(100)
 
   const [fighters, setFighters] = useState(
     [
@@ -85,13 +85,16 @@ const App = () => {
   // const [formData, setFormData] = () => {
 
   // }
-  const handleAddFighter = (newfighter) => {
-    const newFighterArr = [...teams, newfighter]
+  const handleAddFighter = (newFighter) => {
+    const newFighterArr = [...teams, newFighter]
     setTeams(newFighterArr)
-    {teams.length === 0 ? 'No teams to display (Add a fighter)' : 
+    setMoney(money - `${fighters.price}`)
+    console.log(newFighterArr.price)
+    {newFighterArr.length === 0 ? 'No teams to display (Add a fighter)' : 
       teams.map((team) => (
         <>
-          <h3>{team.name}</h3>
+          <h3>{team.name}</h3>  
+          
          
         </>
       ))        
@@ -99,12 +102,8 @@ const App = () => {
 
   }
 
-  const handleMoney = (moneys) => {
-    const totalMoney = [...money, addMoney]
-    setMoney(totalMoney)
-    if (handleAddFighter)
-      return //Not sure what to put here for now
-  }
+
+  
 
   return (
     <>
